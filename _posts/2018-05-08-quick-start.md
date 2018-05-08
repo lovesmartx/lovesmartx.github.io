@@ -24,7 +24,7 @@ Ubuntu ver. **16.01**
 - [Native Build of Qt5 on a Raspberry Pi](http://wiki.qt.io/Native_Build_of_Qt5_on_a_Raspberry_Pi)
 - [Qt for Embedded Linux](http://doc.qt.io/qt-5/embedded-linux.html)
 
-###Other Guide
+### Other Guide
 - [Cross-compilation guide for Qt 5.9.4 and RPi](https://www.raspberrypi.org/forums/viewtopic.php?f=67&t=204529)
 - [How to cross compile QT for Raspberry Pi 3 on Linux (Ubuntu) for Beginners!](https://medium.com/@amirmann/how-to-cross-compile-qt-for-raspberry-pi-3-on-linux-ubuntu-for-beginners-75acf2a078c)
 - [Guide To Cross Compile Qt 5.4 for the Raspberry Pi](https://exploreembedded.tumblr.com/)
@@ -108,7 +108,7 @@ sudo chown pi:pi /usr/local/qt5pi
 ```
 If ready, dont shutdown your raspberry pi!~
 
-###Prepare Linux host
+### Prepare Linux host
 
 **[on host PC]** Update
 ```
@@ -232,7 +232,7 @@ make install
 *==到這邊都沒問題的話，恭喜您突破第一道難關~==*
 
 
-###Upload to raspberry pi and update link
+### Upload to raspberry pi and update link
 **[on host PC] **Upload to raspberry pi
 ```
 cd ~/raspi
@@ -256,7 +256,7 @@ sudo ln -s /opt/vc/lib/libEGL.so /opt/vc/lib/libEGL.so.1
 sudo ln -s /opt/vc/lib/libGLESv2.so /opt/vc/lib/libGLESv2.so.2
 ```
 
-##Qt configuration
+## Qt configuration
 Tools->Options...->Devices->Add
 Generic Linux Device
 Edit Hostname, authentication type key, username and add private key ( ~/.ssh/id_rsa )
