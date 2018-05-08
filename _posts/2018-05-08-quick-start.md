@@ -108,6 +108,8 @@ sudo chown pi:pi /usr/local/qt5pi
 ```
 If ready, dont shutdown your raspberry pi!~
 
+_ _ _
+
 ### Prepare Linux host
 
 **[on host PC]** Update
@@ -121,18 +123,16 @@ sudo apt-get -y upgrade
 sudo apt-get install git bison python gperf
 ```
 
-**[on host PC] ** Installing QT Creator 5.10.1 on your Linux .
+**[on host PC]** Installing QT Creator 5.10.1 on your Linux .
 ( [官網下載](https://www.qt.io/download) )
 
-**[on host PC] **Generate ssh public key
+**[on host PC]** Generate ssh public key
 ```
 ssh-keygen -t rsa -C pi@raspberrypi.local -N "" -f ~/.ssh/id_rsa
 ```
 ```
 cat ~/.ssh/id_rsa.pub | ssh -o StrictHostKeyChecking=no pi@raspberrypi.local "mkdir -p .ssh && chmod 700 .ssh && cat >> .ssh/authorized_keys"
 ```
-
-_ _ _
 
 **[on host PC]** Create our working directory:
 ```
@@ -160,7 +160,7 @@ If you use a 32Bit host, use this toolchain path: /raspi/tools/arm-bcm2708/gcc-l
 ```
  which arm-linux-gnueabihf-gcc
 ```
-___
+
 **[on host PC]** Create a sysroot. Using rsync we can properly keep things synchronized in the future as well.
 Replace **raspberrypi.local** with the IP address of the Pi.
 ```
@@ -170,8 +170,6 @@ rsync -avz pi@raspberrypi.local:/usr/include sysroot/usr
 rsync -avz pi@raspberrypi.local:/usr/lib sysroot/usr
 rsync -avz pi@raspberrypi.local:/opt/vc sysroot/opt
 ```
-這邊會花很多時間，可以先去泡個茶。
-___
 
 **[on host PC]** Create correct symlinks to "missing" libraries
 ```
@@ -188,14 +186,14 @@ ln -s sysroot/opt/vc/lib/libEGL.so sysroot/opt/vc/lib/libEGL.so.1
 ```
 ln -s sysroot/opt/vc/lib/libGLESv2.so sysroot/opt/vc/lib/libGLESv2.so.2
 ```
-___
-**[on host PC] **Adjust symlinks to be relative. Use provided script, because the old fixQualifiedLibraryPaths is not working properly:
+
+**[on host PC]** Adjust symlinks to be relative. Use provided script, because the old fixQualifiedLibraryPaths is not working properly:
 ```
 wget https://raw.githubusercontent.com/riscv/riscv-poky/priv-1.10/scripts/sysroot-relativelinks.py
 chmod +x sysroot-relativelinks.py
 ./sysroot-relativelinks.py sysroot
 ```
-___
+
 > Get qtbase and configure Qt. The target directory is /usr/local/qt5pi on the Pi, the host tools like qmake will go to ~/raspi/qt5, while make install will target ~/raspi/qt5pi (this is what we will sync to the device).
 Don't forget to adjust paths if you changed that. For some reason the ~/ in the paths may not work, if this the case just use full paths.
 
@@ -290,6 +288,3 @@ Sysroot: Choose /opt/qt5pi/sysroot
 C and C++: Choose prior created raspberry pi compilers
 Debugger: Choose prior created raspberry pi debugger
 Qt version: Choose prior created raspberry pi qt version
-
-***==Getting Started==***
-
