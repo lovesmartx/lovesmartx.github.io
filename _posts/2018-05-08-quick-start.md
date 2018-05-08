@@ -53,7 +53,7 @@ Ubuntu
 
 > 如果在Windows底下可以用虛擬機器 ([Victualbox](https://www.virtualbox.org/))
 > 最好先掛好共享資料夾 ，Guest Additions 經常掛載失敗，需額外安裝元件
-```github
+```
 sudo apt-get install virtualbox-guest-dkms
 ```
 
@@ -62,7 +62,7 @@ sudo apt-get install virtualbox-guest-dkms
 **[on RPi]** 裝上SDCard ,網路線 ,USB to TTL ,插電
 
 **[on RPi]** Edit sources list in /etc/apt/sources.list and uncomment the *deb-src* line
-```github
+```
 sudo nano /etc/apt/sources.list
 ```
 uncomment = 拿掉下面這行的#字符號
@@ -201,7 +201,7 @@ Don't forget to adjust paths if you changed that. For some reason the ~/ in the 
 
 > You need to change < rpi-version> with a proper Raspberry Pi version. Use: linux\-rasp\-pi\-g\+\+ for RPi, linux\-rasp\-pi2\-g\+\+ for RPi2 and linux-rasp-pi3-g\+\+ for RPi3.
 
-**[on host PC] ** Get Qt sources and untar Qt sources
+**[on host PC]** Get Qt sources and untar Qt sources
 ```
 wget https://download.qt.io/official_releases/qt/5.10/5.10.1/single/qt-everywhere-src-5.10.1.tar.xz
 ```
@@ -209,7 +209,7 @@ wget https://download.qt.io/official_releases/qt/5.10/5.10.1/single/qt-everywher
 tar xf qt-everywhere-src-5.10.1.tar.xz
 ```
 
-**[on host PC] ** Create build dir and configure source
+**[on host PC]** Create build dir and configure source
 如果後續make有問題或要重編，直接砍掉qt5buid就好‧
 ```
 mkdir qt5build
@@ -221,7 +221,7 @@ cd qt5build
 ```
 Sadly QtWebengine dont compile on Raspberry Pi 1 (maybe also Pi 2), so we have to skip it. Also skip QtScript, its deprecated.
 
-**[on host PC] **Make
+**[on host PC]**Make
 ```
 make
 make install
@@ -230,8 +230,8 @@ make install
 *==到這邊都沒問題的話，恭喜您突破第一道難關~==*
 
 
-### Upload to raspberry pi and update link
-**[on host PC] **Upload to raspberry pi
+### Upload to raspberry pi
+**[on host PC]**Upload to raspberry pi
 ```
 cd ~/raspi
 rsync -avz sysroot/usr/local/qt5pi pi@raspberrypi.local:/usr/local
@@ -241,7 +241,7 @@ rsync -avz sysroot/usr/local/qt5pi pi@raspberrypi.local:/usr/local
 echo /usr/local/qt5pi/lib | sudo tee /etc/ld.so.conf.d/qt5pi.conf
 sudo ldconfig
 ```
-**[on RPi] **Fix the EGL/GLES libraries. The device may have the Mesa version of libEGL and libGLESv2 in /usr/lib/arm-linux-gnueabihf, resulting Qt apps picking these instead of the real thing from /opt/vc/lib. This may be fine for X11 desktop apps not caring about OpenGL performance but is totally useless for windowing system-less, fullscreen embedded apps. You may want to save the originals somewhere, just in case. Make sure you're in "/home/pi" aka "~" when you run these commands:
+**[on RPi]**Fix the EGL/GLES libraries. The device may have the Mesa version of libEGL and libGLESv2 in /usr/lib/arm-linux-gnueabihf, resulting Qt apps picking these instead of the real thing from /opt/vc/lib. This may be fine for X11 desktop apps not caring about OpenGL performance but is totally useless for windowing system-less, fullscreen embedded apps. You may want to save the originals somewhere, just in case. Make sure you're in "/home/pi" aka "~" when you run these commands:
 ```
 sudo mv /usr/lib/arm-linux-gnueabihf/libEGL.so.1.0.0 /usr/lib/arm-linux-gnueabihf/libEGL.so.1.0.0_backup
 sudo mv /usr/lib/arm-linux-gnueabihf/libGLESv2.so.2.0.0 /usr/lib/arm-linux-gnueabihf/libGLESv2.so.2.0.0_backup
