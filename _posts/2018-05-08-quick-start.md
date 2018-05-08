@@ -24,6 +24,7 @@ Ubuntu ver. **16.01**
 - [Native Build of Qt5 on a Raspberry Pi](http://wiki.qt.io/Native_Build_of_Qt5_on_a_Raspberry_Pi)
 - [Qt for Embedded Linux](http://doc.qt.io/qt-5/embedded-linux.html)
 
+_ _ _
 
 ###Other Guide
 
@@ -32,7 +33,7 @@ Ubuntu ver. **16.01**
 - [Guide To Cross Compile Qt 5.4 for the Raspberry Pi](https://exploreembedded.tumblr.com/)
 - [Configuring Qt Creator for the Raspberry Pi](https://www.ics.com/blog/configuring-qt-creator-raspberry-pi)
 
-
+_ _ _
 
 ## Preparation
 **[硬體]**
@@ -108,8 +109,9 @@ sudo apt-get install libudev-dev libinput-dev libts-dev libxcb-xinerama0-dev lib
 sudo mkdir /usr/local/qt5pi
 sudo chown pi:pi /usr/local/qt5pi**
 ```
-#####If ready, dont shutdown your raspberry pi !!
-___
+***==If ready, dont shutdown your raspberry pi !!==***
+
+- - -
 
 
 ###Prepare Linux host
@@ -231,8 +233,10 @@ Sadly QtWebengine dont compile on Raspberry Pi 1 (maybe also Pi 2), so we have t
 make
 make install
 ```
-######到這邊都沒問題的話，恭喜您突破第一道難關~
----
+
+*==到這邊都沒問題的話，恭喜您突破第一道難關~==*
+
+
 ###Upload to raspberry pi and update link
 **[on host PC] **Upload to raspberry pi
 ```
@@ -263,7 +267,7 @@ Generic Linux Device
 Edit Hostname, authentication type key, username and add private key ( ~/.ssh/id_rsa )
 
 Tools->Build&Run->Debuggers->Add
-Edit name and path 
+Edit name and path
 ```
  ~/raspi/tools/arm-bcm2708/gcc-linaro-arm-linux-gnueabihf-raspbian-x64/bin/arm-linux-gnueabihf-gdb
 ```
@@ -292,4 +296,5 @@ C and C++: Choose prior created raspberry pi compilers
 Debugger: Choose prior created raspberry pi debugger
 Qt version: Choose prior created raspberry pi qt version
 
-##### Getting Started
+***==Getting Started==***
+---
