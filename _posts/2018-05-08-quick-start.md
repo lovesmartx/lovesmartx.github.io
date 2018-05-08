@@ -75,49 +75,49 @@ uncomment = 拿掉下面這行的#字符號
 2. Change the GPU memory to 256 MB.
 
 
-```github
+```
 sudo raspi-config
 ```
 **[on RPi]** 系統更新
-```github
+```
 sudo apt-get update
 sudo apt-get dist-upgrade
 sudo reboot
 ```
 **[on RPi]** 韌體更新 [(額外要注意的BUG)](https://bugreports.qt.io/browse/QTBUG-62216)，後續會手動處理symlinks，可忽略。
-```github
+```
 sudo rpi-update
 sudo reboot
 ```
 **[on RPi]** (optional)安裝遠端連線，方便測試 ([相關教學](http://atceiling.blogspot.tw/2017/03/raspberry-pi-vncteamviewrdp.html))
-```github
+```
 $ sudo apt-get install xrdp
 ```
 
 **[on RPi]** Install dependencies
-```github
+```
 sudo apt-get build-dep qt4-x11
 sudo apt-get build-dep libqt5gui5
 sudo apt-get install libudev-dev libinput-dev libts-dev libxcb-xinerama0-dev libxcb-xinerama0
 ```
 
 **[on RPi]** Prepare our target directory
-```github
+```
 sudo mkdir /usr/local/qt5pi
 sudo chown pi:pi /usr/local/qt5pi
 ```
-If ready, dont shutdown your raspberry pi !!
-
+If ready, dont shutdown your raspberry pi!~
 
 ###Prepare Linux host
-**[on host PC] **Update
-```github
+
+**[on host PC]** Update
+```
 sudo apt-get update
 sudo apt-get -y upgrade
 ```
 
-**[on host PC] **Install dependencies
-```github
+**[on host PC]** Install dependencies
+```
 sudo apt-get install git bison python gperf
 ```
 
@@ -125,22 +125,22 @@ sudo apt-get install git bison python gperf
 ( [官網下載](https://www.qt.io/download) )
 
 **[on host PC] **Generate ssh public key
-```github
+```
 ssh-keygen -t rsa -C pi@raspberrypi.local -N "" -f ~/.ssh/id_rsa
 ```
-```github
+```
 cat ~/.ssh/id_rsa.pub | ssh -o StrictHostKeyChecking=no pi@raspberrypi.local "mkdir -p .ssh && chmod 700 .ssh && cat >> .ssh/authorized_keys"
 ```
 
 _ _ _
 
-**[on host PC] ** Create our working directory:
+**[on host PC]** Create our working directory:
 ```
 mkdir ~/raspi
 cd ~/raspi
 git clone https://github.com/raspberrypi/tools
 ```
-**[on host PC] ** Get a toolchain:
+**[on host PC]** Get a toolchain:
 ```
 git clone https://github.com/raspberrypi/tools
 ```
@@ -292,4 +292,4 @@ Debugger: Choose prior created raspberry pi debugger
 Qt version: Choose prior created raspberry pi qt version
 
 ***==Getting Started==***
----
+
