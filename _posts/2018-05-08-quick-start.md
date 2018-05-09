@@ -34,12 +34,12 @@ _ _ _
 
 ## Preparation
 **[硬體]**
-PC x1
-Raspberry Pi x1
-5v 2A 電源 for RPi x1
-USB to TTL x1
-HDMI or HDMI to VGA cable x1
-Touchscreen (Inculde power) x1
+- PC x1
+- Raspberry Pi x1
+- 5v 2A 電源 for RPi x1
+- USB to TTL x1
+- HDMI or HDMI to VGA cable x1
+- Touchscreen (Inculde power) x1
 
 **軟體**
 RASPBIAN
@@ -58,6 +58,7 @@ sudo apt-get install virtualbox-guest-dkms
 ```
 ```
 sudo mount -t vboxsf <共享資料夾名稱> <掛載目的地資料夾路徑>
+Ex: sudo mount -t vboxsf Download /home/hung/文件/data
 ```
 
 ## Step by step
