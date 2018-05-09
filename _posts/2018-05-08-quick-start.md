@@ -216,6 +216,11 @@ wget https://download.qt.io/official_releases/qt/5.10/5.10.1/single/qt-everywher
 ```
 tar xf qt-everywhere-src-5.10.1.tar.xz
 ```
+**[on host PC]** Create hf configuration
+```
+cp -r qt-everywhere-src-5.10.1/qtbase/mkspecs/linux-arm-gnueabi-g++ qt-everywhere-src-5.10.1/qtbase/mkspecs/linux-arm-gnueabihf-g++
+sed -i -e 's/arm-linux-gnueabi-/arm-linux-gnueabihf-/g' qt-everywhere-src-5.10.1/qtbase/mkspecs/linux-arm-gnueabihf-g++/qmake.conf
+```
 
 **[on host PC]** Create build dir and configure source
 如果後續make有問題或要重編，直接砍掉qt5buid就好‧
@@ -225,7 +230,7 @@ cd qt5build
 ```
 
 ```
-../qt-everywhere-src-5.10.1/configure -opengl es2 -device linux-rasp-pi3-g++ -device-option CROSS_COMPILE=arm-linux-gnueabihf- -sysroot ~/raspi/qt5pi/sysroot -prefix /usr/local/qt5pi -opensource -confirm-license -nomake examples -make libs -no-use-gold-linker -no-icu -skip qtwebengine -skip wayland -skip qtscript -v
+../qt-everywhere-src-5.10.1/configure -opengl es2 -device linux-rasp-pi3-g++ -device-option CROSS_COMPILE=arm-linux-gnueabihf- -sysroot ~/raspi/sysroot -prefix /usr/local/qt5pi -opensource -confirm-license -nomake examples -make libs -no-use-gold-linker -no-icu -skip qtwebengine -skip wayland -skip qtscript -v
 ```
 Sadly QtWebengine dont compile on Raspberry Pi 1 (maybe also Pi 2), so we have to skip it. Also skip QtScript, its deprecated.
 
@@ -235,7 +240,7 @@ make
 make install
 ```
 
-*==到這邊都沒問題的話，恭喜您突破第一道難關~==*
+*恭喜您突破第一道難關~*
 
 
 ### Upload to raspberry pi
