@@ -285,7 +285,7 @@ Edit name and path
 Tools->Compilers->Add->GCC->C++
 Edit name and path
 ```
-~/raspi/tools/arm-bcm2708/gcc-linaro-arm-linux-gnueabihf-raspbian-x64/bin/arm-linux-gnueabihf-g++ )
+~/raspi/tools/arm-bcm2708/gcc-linaro-arm-linux-gnueabihf-raspbian-x64/bin/arm-linux-gnueabihf-g++
 ```
 Tools->Qt Versions->Add
 Choose
@@ -295,9 +295,11 @@ Choose
 
 Tools->Kits->Add
 Edit name
+```
 Device type: Generic Linux Device
 Device: Choose prior created raspberry pi device
-Sysroot: Choose /opt/qt5pi/sysroot
+Sysroot: Choose ~/rpi/sysroot
 C and C++: Choose prior created raspberry pi compilers
 Debugger: Choose prior created raspberry pi debugger
 Qt version: Choose prior created raspberry pi qt version
+```
