@@ -41,7 +41,7 @@ _ _ _
 - HDMI or HDMI to VGA cable x1
 - Touchscreen (Inculde power) x1
 
-**軟體**
+**[OS]**
 RASPBIAN
 下載 Full版 IMAGE [舊版的](http://downloads.raspberrypi.org/raspbian/images/) or [最新版](https://www.raspberrypi.org/downloads/raspbian/). 然後燒錄至SD Card. (**@Lite版沒測試過，有看到成功案例**)
 - [Linux燒錄教學](https://www.raspberrypi.org/documentation/installation/installing-images/linux.md)
@@ -164,6 +164,7 @@ If you use a 32Bit host, use this toolchain path: /raspi/tools/arm-bcm2708/gcc-l
 ```
  which arm-linux-gnueabihf-gcc
 ```
+### Sync raspberry pi sysroot
 
 **[on host PC]** Create a sysroot. Using rsync we can properly keep things synchronized in the future as well.
 Replace **raspberrypi.local** with the IP address of the Pi.
@@ -204,6 +205,8 @@ Don't forget to adjust paths if you changed that. For some reason the ~/ in the 
 > You need to change < qt-version> with a proper Qt version (for example 5.6, or 5.9.1; note that version 5.9.1 is a tag not a branch, so you may want to create a local branch with it)
 
 > You need to change < rpi-version> with a proper Raspberry Pi version. Use: linux\-rasp\-pi\-g\+\+ for RPi, linux\-rasp\-pi2\-g\+\+ for RPi2 and linux-rasp-pi3-g\+\+ for RPi3.
+
+### Compiler Qt Source
 
 **[on host PC]** Get Qt sources and untar Qt sources
 ```
