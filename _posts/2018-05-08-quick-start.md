@@ -56,6 +56,9 @@ Ubuntu
 ```
 sudo apt-get install virtualbox-guest-dkms
 ```
+```
+sudo mount -t vboxsf <共享資料夾名稱> <掛載目的地資料夾路徑>
+```
 
 ## Step by step
 ### Prepare Raspberry Pi
