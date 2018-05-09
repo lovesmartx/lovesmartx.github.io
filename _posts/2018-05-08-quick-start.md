@@ -199,6 +199,8 @@ chmod +x sysroot-relativelinks.py
 ./sysroot-relativelinks.py sysroot
 ```
 
+### Compiler Qt Source
+
 > Get qtbase and configure Qt. The target directory is /usr/local/qt5pi on the Pi, the host tools like qmake will go to ~/raspi/qt5, while make install will target ~/raspi/qt5pi (this is what we will sync to the device).
 Don't forget to adjust paths if you changed that. For some reason the ~/ in the paths may not work, if this the case just use full paths.
 
@@ -206,7 +208,6 @@ Don't forget to adjust paths if you changed that. For some reason the ~/ in the 
 
 > You need to change < rpi-version> with a proper Raspberry Pi version. Use: linux\-rasp\-pi\-g\+\+ for RPi, linux\-rasp\-pi2\-g\+\+ for RPi2 and linux-rasp-pi3-g\+\+ for RPi3.
 
-### Compiler Qt Source
 
 **[on host PC]** Get Qt sources and untar Qt sources
 ```
