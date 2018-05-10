@@ -9,10 +9,10 @@ tags:
 - RPi3
 ---
 
-Cross-compile Qt-Rpi3 教學
-+ Qt ver. **5.10.1**
-+ Raspbian **2018-04-18-Stretch**
-+ Ubuntu ver. **16.01**
+Cross-compile Qt-Rpi3 教學  
+Qt ver. **5.10.1**  
+Raspbian **2018-04-18-Stretch**  
+Ubuntu ver. **16.04**  
 
 <!--more-->
 
@@ -164,7 +164,7 @@ If you use a 32Bit host, use this toolchain path: /raspi/tools/arm-bcm2708/gcc-l
 ```
  which arm-linux-gnueabihf-gcc
 ```
-### Sync raspberry pi sysroot
+### Sync Raspberry Pi
 
 **[on host PC]** Create a sysroot. Using rsync we can properly keep things synchronized in the future as well.
 Replace **raspberrypi.local** with the IP address of the Pi.
