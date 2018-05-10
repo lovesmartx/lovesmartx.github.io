@@ -203,9 +203,9 @@ chmod +x sysroot-relativelinks.py
 
 > Get qtbase and configure Qt. The target directory is /usr/local/qt5pi on the Pi, the host tools like qmake will go to ~/raspi/qt5, while make install will target ~/raspi/qt5pi (this is what we will sync to the device).
 Don't forget to adjust paths if you changed that. For some reason the ~/ in the paths may not work, if this the case just use full paths.
-
+>
 > You need to change < qt-version> with a proper Qt version (for example 5.6, or 5.9.1; note that version 5.9.1 is a tag not a branch, so you may want to create a local branch with it)
-
+>
 > You need to change < rpi-version> with a proper Raspberry Pi version. Use: linux\-rasp\-pi\-g\+\+ for RPi, linux\-rasp\-pi2\-g\+\+ for RPi2 and linux-rasp-pi3-g\+\+ for RPi3.
 
 
