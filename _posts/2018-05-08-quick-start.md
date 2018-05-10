@@ -77,7 +77,7 @@ uncomment = 拿掉下面這行的#字符號
 **[on RPi]** (optional) 執行 raspi-config :
 1. Change it to boot to the console instead of X.
 2. Change the GPU memory to 256 MB.
-
+> 切記不要開啟Hardware Acceleration功能，推估需編譯 pi3-vc4版本，才能正常使用
 
 ```
 sudo raspi-config
