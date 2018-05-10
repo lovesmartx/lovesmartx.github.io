@@ -10,9 +10,9 @@ tags:
 ---
 
 Cross-compile Qt-Rpi3 教學
-Qt ver. **5.10.1**
-Raspbian **2018-04-18-Stretch**
-Ubuntu ver. **16.01**
++ Qt ver. **5.10.1**
++ Raspbian **2018-04-18-Stretch**
++ Ubuntu ver. **16.01**
 
 <!--more-->
 
