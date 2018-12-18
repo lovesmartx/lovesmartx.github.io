@@ -142,7 +142,6 @@ cat ~/.ssh/id_rsa.pub | ssh -o StrictHostKeyChecking=no pi@raspberrypi.local "mk
 ```
 mkdir ~/raspi
 cd ~/raspi
-git clone https://github.com/raspberrypi/tools
 ```
 **[on host PC]** Get a toolchain:
 ```
@@ -154,7 +153,7 @@ nano ~/.bashrc
 ```
 把下面這行加入到.bashrc這個文件的最下面
 ```bash
-export PATH=$PATH:/raspi/tools/arm-bcm2708/gcc-linaro-arm-linux-gnueabihf-raspbian-x64/bin
+export PATH=$PATH:/home/pi/raspi/tools/arm-bcm2708/gcc-linaro-arm-linux-gnueabihf-raspbian-x64/bin
 ```
 > To activate this changes, you have to restart the terminal.
 If you use a 32Bit host, use this toolchain path: /raspi/tools/arm-bcm2708/gcc-linaro-arm-linux-gnueabihf-raspbian/bin
@@ -175,6 +174,7 @@ rsync -avz pi@raspberrypi.local:/usr/include sysroot/usr
 rsync -avz pi@raspberrypi.local:/usr/lib sysroot/usr
 rsync -avz pi@raspberrypi.local:/opt/vc sysroot/opt
 ```
+>同步上可能會遇到權限不足的問題，可透過sudo + chmod 來強制完成可以同步的部分。
 
 **[on host PC]** Create correct symlinks to "missing" libraries
 ```
