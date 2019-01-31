@@ -105,6 +105,11 @@ sudo apt-get build-dep libqt5gui5
 sudo apt-get install libudev-dev libinput-dev libts-dev libxcb-xinerama0-dev libxcb-xinerama0
 ```
 
+If you are interested in Bluetooth support then:
+```
+sudo apt-get install bluetooth bluez libbluetooth-dev bluez-tools
+```
+
 **[on RPi]** Prepare our target directory
 ```
 sudo mkdir /usr/local/qt5pi
@@ -272,33 +277,33 @@ Tools->Options...->Devices->Add
 Generic Linux Device
 Edit Hostname, authentication type key, username and add private key ( ~/.ssh/id_rsa )
 
-Tools->Build&Run->Debuggers->Add
+Tools->Options...->Kits->Debuggers->Add
 Edit name and path
 ```
  ~/raspi/tools/arm-bcm2708/gcc-linaro-arm-linux-gnueabihf-raspbian-x64/bin/arm-linux-gnueabihf-gdb
 ```
-Tools->Compilers->Add->GCC->C
+Tools->Options...->Kits->Compilers->Add->GCC->C
 Edit name and path
 ```
 ~/raspi/tools/arm-bcm2708/gcc-linaro-arm-linux-gnueabihf-raspbian-x64/bin/arm-linux-gnueabihf-gcc
 ```
-Tools->Compilers->Add->GCC->C++
+Tools->Options...->Kits->Compilers->Add->GCC->C++
 Edit name and path
 ```
 ~/raspi/tools/arm-bcm2708/gcc-linaro-arm-linux-gnueabihf-raspbian-x64/bin/arm-linux-gnueabihf-g++
 ```
-Tools->Qt Versions->Add
+Tools->Options...->Kits->Qt Versions->Add
 Choose
 ```
 ~/raspi/sysroot/usr/local/qt5pi/bin/qmake
 ```
 
-Tools->Kits->Add
+Tools->Options...->Kits->Kits->Add
 Edit name
 ```
 Device type: Generic Linux Device
 Device: Choose prior created raspberry pi device
-Sysroot: Choose ~/rpi/sysroot
+Sysroot: Choose ~/raspi/sysroot
 C and C++: Choose prior created raspberry pi compilers
 Debugger: Choose prior created raspberry pi debugger
 Qt version: Choose prior created raspberry pi qt version
